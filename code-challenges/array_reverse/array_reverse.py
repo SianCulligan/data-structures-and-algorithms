@@ -5,5 +5,5 @@ def arrayReverse(arr):
         arrCount -= 1
 
 
-exampleList = [5,4,3,2,1]
-arrayReverse(exampleList)
+# exampleList = [5,4,3,2,1]
+# arrayReverse(exampleList)
