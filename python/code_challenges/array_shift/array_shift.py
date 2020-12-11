@@ -1,32 +1,21 @@
-# Could have simplified by using the .insert method or  "start stop step"
-
 def insertShiftArray(arr, val):
+    # Check for edge cases
+    if len(arr) == False:
+        print(val)
+        return (val)
+    elif len(arr) == 1:
+        arr.insert(1, val)
+        return (arr)
     halfsies = round(((len(arr))/2))
-    for index in arr:
-        # Check for edge cases
-        if len(arr) == False:
-            return (val)
-            break
-        elif len(arr) == 1:
-            return (arr[0], val)
-            break
-        elif len(arr) == 2:
-            return (arr[0], val, arr[1])
-            break    
-        elif index == 1:
-            return (arr[0], arr[1])
-            continue
-        else:
-            # If arr passes all edge case tests, run the rest through a series of if statements
-            if index == halfsies:
-                return (val)
-            elif index < halfsies:
-                return (arr[index])
-            else:
-                return (arr[index-1])
-    
+    print(halfsies)
+    arr.insert(halfsies, val)
+    print(arr)
+    return arr
 
-insertShiftArray([1,2,3,4,5,6], 11)
+
+
+
+insertShiftArray([1, 2, 3, 4, 5, 6, 7], 11)
 
 
 
