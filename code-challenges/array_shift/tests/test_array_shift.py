@@ -1,3 +1,5 @@
+from array_shift import insertShiftArray
+
 # Happy Path
 def test_insert_a_val_into_the_middle_of_an_array():
     expected = """
