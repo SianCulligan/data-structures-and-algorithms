@@ -12,10 +12,4 @@ def insertShiftArray(arr, val):
     print(arr)
     return arr
 
-
-
-
 insertShiftArray([1, 2, 3, 4, 5, 6, 7], 11)
-
-
-
