@@ -10,7 +10,8 @@ class LinkedList:
     def insert(self, val):
         strVal = str(val)
         insertNode = Node(strVal)
-        insertNode.nextVal = self.headVal
+        if self.headVal is not None: 
+            insertNode.nextVal = self.headVal
         self.headVal = insertNode
 
     def toString(self):
