@@ -37,29 +37,3 @@ class LinkedList:
             elif start.nodeVal != val:
                 start = start.nextVal
             
-
-
-
-
-
-list = LinkedList()
-print("========")
-print(list)
-# list.headVal = Node("mon")
-# e2 = Node("tues")
-# e3 = Node("wed")
-
-# # Link first Node to second node
-# list.headVal.nextVal = e2
-
-# # Link second Node to third node
-# e2.nextVal = e3
-
-# list.toString()
-
-# list.insert("sun")
-# print("---------------------")
-# list.toString()
-# print("---------------------")
-# list.includes("mon")
-# print("******************")
