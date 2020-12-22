@@ -20,6 +20,9 @@
 - Includes: o(n), the more values the more the function needs to loop to find the passed value
 - To String: o(n), the more values the more the function needs to loop to print values
 
+- Append, InsertBefore, InsertAfter: o(n), all functions need to traverse the list - worse case, all need to traverse through to the end
+
+
 ## API
 <!-- Description of each method publicly available to your Linked List -->
 - n/a
