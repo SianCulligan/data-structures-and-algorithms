@@ -57,5 +57,67 @@ def test_can_properly_return_a_collection_of_all_the_values_that_exist_in_the_li
     newList.insert("One")
     expected = [newList.headVal.nodeVal, newList.headVal.nextVal.nodeVal, newList.headVal.nextVal.nextVal.nodeVal]
     actual = ["One", "Two", "Three"]
+    assert expected == actual 
+
+def test_can_successfully_add_a_node_to_the_end_of_the_linked_list():
+    newList = LinkedList()
+    newList.insert("Three")
+    newList.insert("Two")
+    newList.insert("One")
+    newList.append("Four")
+    expected = [newList.headVal.nodeVal, newList.headVal.nextVal.nodeVal, newList.headVal.nextVal.nextVal.nodeVal, newList.headVal.nextVal.nextVal.nextVal.nodeVal]
+    actual = ["One", "Two", "Three", "Four"]
     assert expected == actual
 
+
+def test_can_successfully_add_multiple_nodes_to_the_end_of_a_linked_list():
+    newList = LinkedList()
+    newList.insert("Three")
+    newList.insert("Two")
+    newList.insert("One")
+    newList.append("Four")
+    newList.append("Five")
+    expected = [newList.headVal.nodeVal, newList.headVal.nextVal.nodeVal, newList.headVal.nextVal.nextVal.nodeVal, newList.headVal.nextVal.nextVal.nextVal.nodeVal, newList.headVal.nextVal.nextVal.nextVal.nextVal.nodeVal]
+    actual = ["One", "Two", "Three", "Four", "Five"]
+    assert expected == actual
+
+
+def test_can_successfully_insert_a_node_before_a_node_located_i_the_middle_of_a_linked_list():
+    newList = LinkedList()
+    newList.insert("Three")
+    newList.insert("Two")
+    newList.insert("One")
+    newList.insertBefore("Two", "Added")
+
+    expected = [newList.headVal.nodeVal, newList.headVal.nextVal.nodeVal, newList.headVal.nextVal.nextVal.nodeVal, newList.headVal.nextVal.nextVal.nextVal.nodeVal]
+    actual = ["One", "Added", "Two", "Three"]
+    assert expected == actual
+
+def test_can_successfully_insert_a_node_before_the_first_node_of_a_linked_list():
+    newList = LinkedList()
+    newList.insert("Three")
+    newList.insert("Two")
+    newList.insert("One")
+    expected = "One"
+    actual = newList.headVal.nodeVal
+    assert expected == actual
+
+def test_can_successfully_insert_after_a_node_in_the_middle_of_the_linked_list():
+    newList = LinkedList()
+    newList.insert("Three")
+    newList.insert("Two")
+    newList.insert("One")
+    newList.insertBefore("Two", "Four")
+    expected = [newList.headVal.nodeVal, newList.headVal.nextVal.nodeVal, newList.headVal.nextVal.nextVal.nodeVal, newList.headVal.nextVal.nextVal.nextVal.nodeVal]
+    actual = ["One", "Four", "Two", "Three"]
+    assert expected == actual
+
+def test_can_successfully_insert_a_node_after_the_last_node_of_the_linked_list():
+    newList = LinkedList()
+    newList.insert("Three")
+    newList.insert("Two")
+    newList.insert("One")
+    newList.insertAfter("Three", "Four")
+    expected = [newList.headVal.nodeVal, newList.headVal.nextVal.nodeVal, newList.headVal.nextVal.nextVal.nodeVal, newList.headVal.nextVal.nextVal.nextVal.nodeVal]
+    actual = ["One", "Two", "Three", "Four"]
+    assert expected == actual

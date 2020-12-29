@@ -1,6 +1,7 @@
 # Code Challenge: Class 05: Linked List Implementation
 
 
+[Whiteboard Image](assets/llinsertions.png)
 
 ## Singly Linked List
 <!-- Short summary or background information -->
@@ -19,6 +20,9 @@
 - Insert: o(1), no matter the length, we just re-assign the head of the node to the new value and change the pointer to look at the old head value
 - Includes: o(n), the more values the more the function needs to loop to find the passed value
 - To String: o(n), the more values the more the function needs to loop to print values
+
+- Append, InsertBefore, InsertAfter: o(n), all functions need to traverse the list - worse case, all need to traverse through to the end
+
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
