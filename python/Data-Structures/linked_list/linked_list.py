@@ -37,9 +37,7 @@ class LinkedList:
                 return True
             elif start.nodeVal != val:
                 start = start.nextVal
-
-
-# .append(value) which adds a new node with the given value to the end of the list
+#----------------------------------------------------------------
     def append(self, value):
         current = self.headVal
         if current is None: 
@@ -52,7 +50,6 @@ class LinkedList:
             else:
                 current = current.nextVal
 
-# .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
     def insertBefore(self, insertBeforeVal, newlyAddedVal): 
         # lastVal = None
         current = self.headVal
@@ -69,8 +66,6 @@ class LinkedList:
             else:
                 return "Exception"
 
-
-# .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
     def insertAfter(self, value, newValue):
         current = self.headVal
         newNode = Node(newValue)
@@ -86,18 +81,36 @@ class LinkedList:
             else:
                 return "Exception"               
 
+# Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+    def kthFromEnd(self, k): 
+        values = self.__str__()
+        lengthVal = len(values)
+        if k >= 0 and k < lengthVal:
+            placeholderIndex = ((lengthVal - 1) - k)
+            # print(values[placeholderIndex])
+            return values[placeholderIndex]
+        else:
+            # print("Exception")
+            return "Exception"           
 
 
+    def __str__(self):
+        output = ''
+        current = self.headVal
+        while current is not None:
+            output += f'{current.nodeVal}'
+            current = current.nextVal
+        print(output)
+        return output        
+
+    def middleOfList(self): 
+        values = self.__str__()
+        middleVal = (round((len(values))/2))-1
+        if middleVal >= 0:
+            print(values[middleVal])
+            return values[middleVal]
+        else:
+            print("Exception")
+            return "Exception"                  
 
 
-
-newList = LinkedList()
-newList.insert("Three")
-newList.toString()
-newList.insert("Two")
-newList.toString()
-newList.insert("One")
-newList.toString()
-newList.insertAfter("Two", "ADDED")
-print("----------------")
-newList.toString()

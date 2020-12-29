@@ -1,27 +1,22 @@
 # Code Challenge: Class 05: Linked List Implementation
 
 
+[Whiteboard Image](assets/kth.png)
+
+
 [Whiteboard Image](assets/llinsertions.png)
+
 
 ## Singly Linked List
 <!-- Short summary or background information -->
 
 ## Challenge
 <!-- Description of the challenge -->
-- Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
-- Within your LinkedList class, include a head property. Upon instantiation, an empty Linked List should be created.
-- Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
-- Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
-- Define a method called toString (or __str__ in Python) which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
-"{ a } -> { b } -> { c } -> NULL"
+- Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-- Insert: o(1), no matter the length, we just re-assign the head of the node to the new value and change the pointer to look at the old head value
-- Includes: o(n), the more values the more the function needs to loop to find the passed value
-- To String: o(n), the more values the more the function needs to loop to print values
-
-- Append, InsertBefore, InsertAfter: o(n), all functions need to traverse the list - worse case, all need to traverse through to the end
+- Kth from end - o(1), by utilizing some simple math & a helper function rather than a loop, the method grabs the value right away regardless of length
 
 
 ## API

@@ -121,3 +121,69 @@ def test_can_successfully_insert_a_node_after_the_last_node_of_the_linked_list()
     expected = [newList.headVal.nodeVal, newList.headVal.nextVal.nodeVal, newList.headVal.nextVal.nextVal.nodeVal, newList.headVal.nextVal.nextVal.nextVal.nodeVal]
     actual = ["One", "Two", "Three", "Four"]
     assert expected == actual
+
+
+
+
+
+
+
+
+# “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+
+def test_k_is_greater_than_the_length_of_the_linked_list():
+    newList = LinkedList()
+    newList.insert(2)
+    newList.insert(8)
+    newList.insert(3)
+    newList.insert(1)
+    expected = "Exception"
+    actual = newList.kthFromEnd(6)
+    assert expected == actual
+
+def test_k_and_the_length_of_the_list_are_the_same():
+    newList = LinkedList()
+    newList.insert(2)
+    newList.insert(8)
+    newList.insert(3)
+    newList.insert(1)
+    expected = "Exception"
+    actual = newList.kthFromEnd(4)
+    assert expected == actual
+
+def test_k_and_the_length_of_the_list_are_the_same():
+    newList = LinkedList()
+    newList.insert(2)
+    newList.insert(8)
+    newList.insert(3)
+    newList.insert(1)
+    expected = '3'
+    actual = newList.kthFromEnd(2)
+    assert expected == actual
+
+def test_k_is_not_a_positive_integer():
+    newList = LinkedList()
+    newList.insert(2)
+    newList.insert(8)
+    newList.insert(3)
+    newList.insert(1)
+    expected = "Exception"
+    actual = newList.kthFromEnd(-2)
+    assert expected == actual
+
+def test_where_the_linked_list_is_of_a_size_one():
+    newList = LinkedList()
+    newList.insert(2)
+    expected = "2"
+    actual = newList.kthFromEnd(0)
+    assert expected == actual
+
+def test_where_k_is_not_at_the_end_but_somewhere_in_the_middle_of_the_linked_list():
+    newList = LinkedList()
+    newList.insert(2)
+    newList.insert(8)
+    newList.insert(3)
+    newList.insert(1)
+    expected = "3"
+    actual = newList.kthFromEnd(2)
+    assert expected == actual
