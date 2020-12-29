@@ -37,7 +37,7 @@ class LinkedList:
                 return True
             elif start.nodeVal != val:
                 start = start.nextVal
-
+#----------------------------------------------------------------
     def append(self, value):
         current = self.headVal
         if current is None: 
