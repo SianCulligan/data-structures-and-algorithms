@@ -1,6 +1,11 @@
 # Code Challenge: Class 05: Linked List Implementation
 
+
 [Whiteboard Image](assets/kth.png)
+
+
+[Whiteboard Image](assets/llinsertions.png)
+
 
 ## Singly Linked List
 <!-- Short summary or background information -->
