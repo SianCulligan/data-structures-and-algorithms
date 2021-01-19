@@ -15,44 +15,43 @@ class AnimalShelter:
     def enqueue(self, animal):
         new_node = Node(animal)
         if self.isempty() is True:
-            self.front, self.rear = new_node
-            return
-
-        self.rear.next = new_node
-        self.rear = new_node
+            self.front = new_node 
+            self.rear = new_node
+            return self.front.nodeVal
+        else:
+            holder = self.front
+            self.front = Node(animal, holder)
+            return self.front.nodeVal
 
 # dequeue(pref): returns either a dog or a cat. If pref is not "dog" or "cat" then return null.
     def dequeue(self, pref):
         lower_pref = pref.lower()
         current_node = self.front
-        prev_node = None
-
+        prev_node = self.front
+        if self.isempty() is True:
+            print("Null")
+            return "Null"
         if lower_pref != 'dog' and lower_pref != 'cat':
+            print("Null not a dog or cat")
             return "Null"
         while current_node:
-            animal = current_node.nodeVal
-            if animal.species == lower_pref:
-                if prev_node is None:
-                    self.front = current_node.nextVal
-                    current_node.nextVal = None
-                    return current_node
-                prev_node.nextVal = current_node.next
-                if current_node.nextVal == None:
-                    self.rear = prev_node
+            if lower_pref == current_node.nodeVal:
+                prev_node = current_node.nextVal
                 current_node.nextVal = None
-                return current_node
-            prev_node = current_node
-            current_node = current_node.nextVal
-
+                print(current_node.nodeVal)
+                return current_node.nodeVal
+            else: 
+                prev_node = current_node
+                current_node = current_node.nextVal
+        print("Made it to the end")
         return "Null" 
-
 
     def isempty(self):
         if self.front is None and self.rear is None: 
-            print("True")
+            # print("True")
             return True
         else: 
-            print("False")
+            # print("False")
             return False
 
 
@@ -60,29 +59,29 @@ class AnimalShelter:
         current_node = self.front
         new_str = ''
         while (current_node) :
-            new_str += '[ name: ' + current_node.nodeVal.name + ', species: ' + current_node.nodeVal.species + '] -> '
-        current_node = current_node.nextVal
-        new_str += 'null'
+            new_str += current_node.nodeVal
+            current_node = current_node.nextVal
+        print(new_str)
         return new_str
 
 
-class Animal:
-    def __init__(self, name="", species=None): 
-        self.name = name
-        self.species = species
+# class Animal:
+#     def __init__(self, name="", species=None): 
+#         self.name = name
+#         self.species = species
 
-class Dog(Animal): 
-    def __init__(self, species):
-        self.species = 'dog'
+# class Dog(Animal): 
+#     def __init__(self, species):
+#         self.species = 'dog'
 
-class Cat(Animal): 
-    def __init__(self, name=None):
-        self.name = name
-        self.species = 'cat'
+# class Cat(Animal): 
+#     def __init__(self, name=None):
+#         self.name = name
+#         self.species = 'cat'
 
-littleton = Animal.Dog('Littleton')
-print("------------")
-print(littleton)
+# littleton = Animal.Dog('Littleton')
+# print("------------")
+# print(littleton)
 
 
 
@@ -123,3 +122,6 @@ print(littleton)
 # MyChicken = Animal.Chicken("Sally", 2)
 # print("--------")
 # print(MyChicken)
+
+
+
