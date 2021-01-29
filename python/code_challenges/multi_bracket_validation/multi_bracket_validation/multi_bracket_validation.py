@@ -1,53 +1,23 @@
 def multi_bracket_validation(input):
-    input_length = len(input)
-    sep_input = list(input)
-    input_checker = []
-    validator = []
+    pairs = {
+        "[" : "]",
+        "{" : "}",
+        "(" : ")"
+    }
 
-    if input_length == 0:
-        return 'Please enter a valid input'
+    verify_list = []
 
-    for i in sep_input: 
-        if i == '(' or i == '{' or i == '[' or i == ')' or i == '}' or i == ']':
-            input_checker.append(i)
-            validator.append(i)
-        else:
-            continue
-
-    if len(input_checker) == 0:
-        return 'Please enter an input with brackets to be validated'
-    for i in input_checker: 
-        if i == '(':
-            for x in validator:
-                if x == ')':
-                    validator.remove(i)
-                    validator.remove(x)
-                    continue
-                else:
-                    continue                 
-        elif i == '{':
-            for x in validator:
-                if x == '}':
-                    validator.remove(i)
-                    validator.remove(x)
-                    continue
-                else:
-                    continue    
-        elif i == '[':
-            for x in validator:
-                if x == ']':
-                    validator.remove(i)
-                    validator.remove(x)
-                    continue
-                else:
-                    continue     
-        else: 
-            continue
-    if len(validator) == 0:
-        return True
-    else:
-        return False          
-
+    for i in input:
+        if i in pairs:
+            verify_list.append(i)
+        elif i in pairs.values():
+            if not len(verify_list):
+                return False
+            opener = verify_list.pop()
+            if i != pairs[opener]:
+                return False
+    
+    return len(verify_list) == 0
 
 
 
