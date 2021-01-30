@@ -14,4 +14,4 @@
 <!-- Embedded whiteboard image -->
 
 [Whiteboard solution](mbv.png)
-[Open Pull Request](https://github.com/SianCulligan/python-data-structures-and-algorithms/pull/13)
+[Open Pull Request](https://github.com/SianCulligan/python-data-structures-and-algorithms/pull/16)

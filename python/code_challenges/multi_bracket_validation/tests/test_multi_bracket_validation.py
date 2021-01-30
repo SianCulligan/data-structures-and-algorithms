@@ -20,12 +20,17 @@ def test_will_return_false_when_brackets_are_not_matched():
     actual = multi_bracket_validation('(](')
     assert expected == actual
 
-def test_will_return_an_error_when_input_is_empty():
-    expected = 'Please enter a valid input'
+def test_will_return_true_when_input_is_empty():
+    expected = True
     actual = multi_bracket_validation('')
     assert expected == actual 
 
-def test_will_return_an_error_when_input_has_no_brackets():
-    expected = 'Please enter an input with brackets to be validated'
+def test_will_return_true_when_input_has_no_brackets():
+    expected = True
     actual = multi_bracket_validation('This has no brackets')
     assert expected == actual 
+
+def test_will_return_false_when_brackets_are_out_of_order():
+    expected = False
+    actual = multi_bracket_validation('{ ( } )')
+    assert expected == actual
