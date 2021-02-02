@@ -17,3 +17,4 @@ This approach is o(n) since no matter what, all nodes need to be traversed
 ## Solution
 <!-- Embedded whiteboard image -->
 [Whiteboard Image](assets/findMax.png)
+[Open PR](https://github.com/SianCulligan/python-data-structures-and-algorithms/pull/19)
