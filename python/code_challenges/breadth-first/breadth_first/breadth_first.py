@@ -15,7 +15,7 @@ class BinaryTree:
         
     def breadth_first(self): 
         if self.root is None: 
-            return "Root is empty"
+            return "Please enter a valid tree"
 
         return_list = [] 
 
@@ -40,15 +40,15 @@ class BinaryTree:
 
 
 
-new_tree = BinaryTree()
-new_tree.root = Node("A")
-new_tree.root.left = Node("B")
-new_tree.root.right = Node("C")
-new_tree.root.right.left = Node("F") 
-new_tree.root.left.left = Node("D")       
-new_tree.root.left.right = Node("E")  
+# new_tree = BinaryTree()
+# new_tree.root = Node("A")
+# new_tree.root.left = Node("B")
+# new_tree.root.right = Node("C")
+# new_tree.root.right.left = Node("F") 
+# new_tree.root.left.left = Node("D")       
+# new_tree.root.left.right = Node("E")  
 
-print(new_tree.breadth_first())
+# print(new_tree.breadth_first())
 
             # a
     # b               c
