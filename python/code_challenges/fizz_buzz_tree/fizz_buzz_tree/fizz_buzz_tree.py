@@ -51,55 +51,6 @@ def fizz_buzz_helper(root):
     return newNode
 
 
-# if __name__ = "__main__":
-#     b_tree = BinaryTree()
-#     b_tree.root = Node(1)
-#     b_tree.root.left = Node(3)
-#     b_tree.root.right = Node(5)
-#     b_tree.root.right.left = Node(7) 
-#     b_tree.root.left.left = Node(15)       
-#     b_tree.root.left.right = Node(30) 
-
-
-
-
-# expected = new_tree.preOrder()
-# print(expected)
-
-# new_tree = BinaryTree()
-# new_tree.root = Node(1)
-# print(new_tree.root.nodeVal)
-# new_tree.root.left = Node(2)
-# print(new_tree.root.left.nodeVal)
-# new_tree.root.right = Node(3)   
-# print(new_tree.root.right.nodeVal)
-
-
-
-# b_tree = BinaryTree()
-# b_tree.root = Node(1)
-# b_tree.root.left = Node(3)
-# b_tree.root.right = Node(5)
-# b_tree.root.right.left = Node(7) 
-# b_tree.root.left.left = Node(15)       
-# b_tree.root.left.right = Node(30) 
-
-
-# b_tree = BinaryTree()
-# b_tree.root = Node(-9)
-# b_tree.root.left = Node(-2)
-# b_tree.root.left.right = Node(-16)
-# b_tree.root.left.left = Node(-10)
-# b_tree.root.right = Node(-15)
-
-
-# new_tree = fizzBuzzTree(b_tree)
-# expected = new_tree.preOrder()
-# print("EXPECTED", expected)
-# # print(b_tree.preOrder())
-
-
-
 
 
 
