@@ -12,6 +12,4 @@
 
 ## Solution
 
-[Open PR](https://github.com/SianCulligan/python-data-structures-and-algorithms/pull/25)
-
 ![Whiteboard Image](rw.png)
