@@ -22,13 +22,10 @@ class HashTable():
         get_hash = self._hash(key)
         tempvar_hash = self._buckets[get_hash]
         current = tempvar_hash.head
-
         while current: 
             if current.data[0] == key:
                 return current.data[1]
             current = current.next
-
-
         return "null"
 
 
