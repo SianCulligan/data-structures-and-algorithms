@@ -1,7 +1,7 @@
 class Node:
-    def __init__(self, nodeVal=None, nextVal=None):
+    def __init__(self, nodeVal=None, next=None):
         self.nodeVal = nodeVal
-        self.nextVal = nextVal
+        self.next = next
 
 class LinkedList:
     def __init__(self, headVal=None):
@@ -10,7 +10,7 @@ class LinkedList:
     def insert(self, data):
         node = Node(data)
         if not self.headVal:
-            self.head =  node
+            self.headVal =  node
         else: 
             current = self.headVal
             while current.next: 
@@ -22,7 +22,7 @@ class LinkedList:
         listItOut = []
         while printval is not None:
             listItOut.append("{" + printval.nodeVal + "} ->")
-            printval = printval.nextVal
+            printval = printval.next
         if printval is None: 
             listItOut.append("NULL")
         print(listItOut)
