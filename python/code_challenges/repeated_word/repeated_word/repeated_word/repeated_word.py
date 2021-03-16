@@ -91,13 +91,9 @@ def repeated_word(verse):
     verse = verse.replace(",", "")
     new_table = HashTable()
     split_it_up = verse.split()
-
-
-
-
     num_of_words = len(split_it_up)
     print(num_of_words)
-    no_words = "No repeating words ¯\_(ツ)_/¯"
+    no_words = "No repeating words"
     # add words to hashtable? 
     # run the 'contains method' to see if HT contains that key, if so return word, if not, add it
     for word in split_it_up: 
@@ -107,7 +103,6 @@ def repeated_word(verse):
             return word, num_of_words
         else:
             new_table.add(word, 1)
-    
     return no_words, num_of_words
             
             
