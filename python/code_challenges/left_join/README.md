@@ -1,5 +1,5 @@
 # Hashmap LEFT JOIN
-- [Pull Request]()
+- [Pull Request](https://github.com/SianCulligan/python-data-structures-and-algorithms/pull/28)
 
 ### Challenge
 
