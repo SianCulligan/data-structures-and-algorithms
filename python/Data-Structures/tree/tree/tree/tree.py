@@ -12,9 +12,7 @@ class BinaryTree:
         self.root = Node(value)
 
 # Pre-order: root >> left >> right
-# returns a list of the values
     def preOrder(self):
-        # root = self.root.nodeVal
         if self.root is None: 
             return "Root is empty"
 
@@ -34,7 +32,6 @@ class BinaryTree:
         return root_list 
 
 # In-order: left >> root >> right
-# returns a list of the values
     def inOrder(self):
         if self.root is None: 
             return "Root is empty"
@@ -54,7 +51,6 @@ class BinaryTree:
         return root_list 
 
 # Post-order: left >> right >> root
-# returns a list of the values
     def postOrder(self):
         if self.root is None: 
             return "Root is empty"
@@ -113,12 +109,3 @@ class BinarySearchTree(BinaryTree):
                 return True
         return False
 
-new_tree = BinaryTree()
-new_tree.root = Node(1)
-# print(new_tree.root.nodeVal)
-new_tree.root.left = Node(2)
-# print(new_tree.root.left.nodeVal)
-new_tree.root.right = Node(3)   
-# print(new_tree.root.right.nodeVal)
-
-print(new_tree.preOrder())
