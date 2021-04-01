@@ -1,3 +1,5 @@
+from graph.queue import Queue
+
 class Node: 
     def __init__(self, value=None,):
         self.value = value
@@ -53,21 +55,38 @@ class Graph:
         list_size = self.node_count
         return list_size
 
+# Extend your graph object with a breadth-first traversal method that accepts a starting node. Without utilizing any of the built-in methods available to your language, return a collection of nodes in the order they were visited. Display the collection.
+
+    # def breadth_first_traversal(self, node):
+    #     visited_nodes = [node]
+    #     new_queue = Queue()
+    #     new_queue.enqueue(node)
+    #     while not new_queue.isempty():
+    #         placeholder = new_queue.dequeue()
+    #         neighbors = [edge.placeholder for edge in self.get_neighbors(node)]
+    #         for i in neighbors:
+    #             if i not in visited_nodes:
+    #                 visited_nodes.append(i)
+    #                 new_queue.enqueue(i)
+    #     return visited_nodes
 
 
-
+    def breadth_first_traversal(self, node):
+        new_list = [node]
+        store_results = []
+        node_tracker = {}
+        current = None
+        neighbors = None
         
+        node_tracker[node] = True
+        while new_list is not None: 
+            current = new_list.pop(0)
+            neighbors = self.get_neighbors(current)
+            store_results.append(current)
 
+            for i in range(len(neighbors)):
+                if node_tracker[neighbors[i].value] is not None:
+                    node_tracker[neighbors[i].value] = True
+                    new_list.append(neighbors[i].val)
 
-
-
-
-
-
-
-
-
-# graph = Graph()
-# graph.add_node('a')
-# graph.add_node('b')
-# print(graph.get_neighbors('a'))
+        return store_results

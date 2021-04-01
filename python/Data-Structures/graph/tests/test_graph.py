@@ -43,9 +43,9 @@ def test_get_nodes():
     new_graph_get_nodes.add_node('a')
     new_graph_get_nodes.add_node('b')
     actual = len(new_graph_get_nodes.get_nodes())
-    expected = 9
+    expected = 7
     assert actual == expected
-    
+
 def test_size_fail():
     graph = Graph()
     a = graph.add_node('a')
