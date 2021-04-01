@@ -5,13 +5,13 @@ from graph.graph import Node, Graph, Edge
 def test_version():
     assert __version__ == '0.1.0'
 
-# def test_size():
-#     new_graph = Graph()
-#     new_graph.add_node('a')
-#     new_graph.add_node('b')
-#     expected = 2
-#     actual = new_graph.size()
-#     assert actual == expected
+def test_size():
+    new_graph = Graph()
+    new_graph.add_node('a')
+    new_graph.add_node('b')
+    expected = 2
+    actual = new_graph.size()
+    assert actual == expected
 
 def test_add_node_pass():
     node = Node('a')
@@ -38,6 +38,14 @@ def test_add_edge_true():
     graph.add_edge(a, b)
     assert True
  
+def test_get_nodes():
+    new_graph_get_nodes = Graph()
+    new_graph_get_nodes.add_node('a')
+    new_graph_get_nodes.add_node('b')
+    actual = len(new_graph_get_nodes.get_nodes())
+    expected = 9
+    assert actual == expected
+    
 def test_size_fail():
     graph = Graph()
     a = graph.add_node('a')
@@ -46,13 +54,6 @@ def test_size_fail():
     actual = graph.size()
     assert actual != expected
 
-def test_get_nodes():
-    new_graph_get_nodes = Graph()
-    new_graph_get_nodes.add_node('a')
-    new_graph_get_nodes.add_node('b')
-    actual = len(new_graph_get_nodes.get_nodes())
-    expected = 2
-    assert actual == expected
 
 def test_get_neighbors():
     graph = Graph()
