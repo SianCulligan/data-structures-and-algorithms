@@ -17,3 +17,6 @@ Use `pytest` to run tests
 ## Whiteboard
 
 [Whiteboard Solution](./assets/gbfs.png)
+
+## Resources
+- Zip function: https://www.w3schools.com/python/ref_func_zip.asp
