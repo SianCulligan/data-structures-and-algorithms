@@ -10,5 +10,5 @@ Time = o(n)
 Space =	o(1)		
 
 ### Solution
-[White-board](assets/depthfirst.png)</br></br>
-[Pull Request]()
+[White-board](assets/depthfirst.png)</br>
+[Pull Request](https://github.com/SianCulligan/python-data-structures-and-algorithms/pull/34)
