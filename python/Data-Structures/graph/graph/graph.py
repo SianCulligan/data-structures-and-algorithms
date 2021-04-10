@@ -1,4 +1,46 @@
-from graph.queue import Queue
+class Queue_Node:
+    def __init__(self, nodeVal=None, nextVal=None):
+        self.nodeVal = nodeVal
+        self.nextVal = nextVal
+
+############################################################################################
+class Queue: 
+    def __init__(self, front=None, rear=None):
+        self.front = front
+        self.rear = rear 
+
+    def enqueue(self, add_to_back):
+        node_to_queue = Queue_Node(add_to_back)
+        if self.isempty() is True:
+            self.front = node_to_queue
+            self.rear = node_to_queue
+            return node_to_queue
+        self.rear.nextVal = node_to_queue
+        self.rear = node_to_queue
+        return node_to_queue
+
+    def dequeue(self):
+        node_to_remove = self.front
+        if self.isempty() is True: 
+            return "Exception"
+        self.front = self.front.nextVal
+        node_to_remove.nextVal = None
+        self.rear = None
+        return node_to_remove.nodeVal
+
+
+    def peek(self):
+        if self.isempty() is True: 
+            return "Exception"
+        return self.front.nodeVal
+
+    def isempty(self):
+        if self.front is None and self.rear is None: 
+            print("True")
+            return True
+        else: 
+            print("False")
+            return False
 
 class Node: 
     def __init__(self, value=None,):
@@ -41,15 +83,15 @@ class Graph:
         return list_holder
 
     def get_neighbors(self, node_to_check):
-        edges = []
+        edge_holder = []
         adjList = self.adj_list[node_to_check]
         if len(adjList) > 0:
             for i in adjList:
-                edge = i.end.value
-                n_weight = i.weight
-                add_to_edges = edge, n_weight
-                edges.append(add_to_edges)
-        return edges
+                end_point = i.end
+                weight = i.weight
+                concatenate = end_point, weight
+                edge_holder.append(concatenate)
+        return edge_holder
 
     def size(self):
         list_size = self.node_count
@@ -57,39 +99,37 @@ class Graph:
 
 # Extend your graph object with a breadth-first traversal method that accepts a starting node. Without utilizing any of the built-in methods available to your language, return a collection of nodes in the order they were visited. Display the collection.
 
-    # def breadth_first_traversal(self, node):
-    #     visited_nodes = [node]
-    #     new_queue = Queue()
-    #     new_queue.enqueue(node)
-    #     while not new_queue.isempty():
-    #         placeholder = new_queue.dequeue()
-    #         neighbors = [edge.placeholder for edge in self.get_neighbors(node)]
-    #         for i in neighbors:
-    #             if i not in visited_nodes:
-    #                 visited_nodes.append(i)
-    #                 new_queue.enqueue(i)
-    #     return visited_nodes
+    def breadth_first_traversal(self, node=Node(None)):
+        # check for empty list
+        if node.value is None:
+            return "Error"
 
-
-    def breadth_first_traversal(self, node):
-        new_list = [node]
-        store_results = []
-        node_tracker = {}
-        current = None
-        neighbors = None
+        # declare variables
+        visited_nodes = []
+        new_queue = []
         
-        node_tracker[node] = True
-        while new_list is not None: 
-            current = new_list.pop(0)
-            neighbors = self.get_neighbors(current)
-            store_results.append(current)
+        results = []
 
-            for i in range(len(neighbors)):
-                if node_tracker[neighbors[i].value] is not None:
-                    node_tracker[neighbors[i].value] = True
-                    new_list.append(neighbors[i].val)
+        # Add 1st value to lists
+        new_queue.append(node)
+        visited_nodes.append(node.value)
+        
+        # Loop through the rest of the graph, skipping previously visited nodes
+        while len(new_queue) > 0:
+            # increment
+            current = new_queue.pop(0)
+            # get neighbors
+            attached_nodes = self.get_neighbors(current)
+            results.append(current.value)
 
-        return store_results
+            # loop through all neighbors (might be more than 2)
+            for i in attached_nodes:
+                if i[0].value in visited_nodes:
+                    continue
+                else:
+                    new_queue.append(i[0])
+                    visited_nodes.append(i[0].value)
+        return results
 
 # Write a function based on the specifications above, which takes in a graph, and an array of city names. Without utilizing any of the built-in methods available to your language, return whether the full trip is possible with direct flights, and how much it would cost.
 
@@ -125,4 +165,14 @@ def get_edge(graph, location):
     return True, price
 
 
-    
+
+graph = Graph()
+pandora = graph.add_node('pandora')
+arendelle = graph.add_node('arendelle')
+metroville = graph.add_node('metroville')
+naboo = graph.add_node('naboo')
+graph.add_edge(pandora, arendelle)
+graph.add_edge(arendelle, metroville)
+graph.add_edge(metroville, naboo)
+# expected = [pandora, arendelle, metroville, naboo]
+print(graph.breadth_first_traversal(pandora))
