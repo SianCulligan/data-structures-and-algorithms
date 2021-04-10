@@ -134,35 +134,9 @@ class Graph:
 # Write a function based on the specifications above, which takes in a graph, and an array of city names. Without utilizing any of the built-in methods available to your language, return whether the full trip is possible with direct flights, and how much it would cost.
 
 # https://www.w3schools.com/python/ref_func_zip.asp
-def get_edge(graph, location):
-    origin = location [0]
-    destination = location[1]
-    price = None
-    destination_holder = None
-    zip_list = zip(location, location[1])
+    def get_edge(self, graph=Node(None), locations=[]):
+        
 
-    for origin, destination in zip_list:
-        map_nodes = graph.get_nodes()
-        origin_node = None
-        for i in map_nodes:
-            if i.value == origin:
-                origin_node = i
-                # continue
-                break
-        if not origin_node:
-            return False, "$0"
-
-        neighbors = graph.get_neighbors(origin_node)
-        for i in neighbors:
-            if i.end.value == destination:
-                price += edge.weight
-                destination = edge.end
-                # continue
-                break
-        if destination is None:
-            return False, "$0"
-
-    return True, price
 
 
 
